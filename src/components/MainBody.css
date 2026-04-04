@@ -1,0 +1,93 @@
+/* src/components/MainBody.css */
+
+.main-content {
+  /* Separación superior: 264px desde el título al límite inferior de la cabecera.
+     Sumamos los 150px de la cabecera fija para el padding total del main. */
+  padding-top: 264px;
+  padding-bottom: 100px; /* Espacio extra al final de la página */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra títulos horizontalmente */
+  width: 100%;
+}
+
+.main-title {
+  font-size: 100px;
+  color: var(--color-titulo);
+  text-align: center;
+  line-height: 1.2; /* Ajuste ligero para el salto de línea */
+  margin-bottom: 30px; /* Espacio arbitrario antes del subtítulo, no especificado */
+}
+
+.main-subtitle {
+  font-size: 50px;
+  color: var(--color-negritas);
+  text-align: center;
+  font-weight: normal; /* JejuGothic regular */
+  margin-bottom: 100px; /* Espacio antes del contenedor, no especificado */
+  max-width: 80%; /* Para que no toque los bordes en pantallas medianas */
+}
+
+/* --- Contenedor Blanco --- */
+.info-container {
+  background-color: var(--color-contenedor-blanco);
+  /* Límites de separación laterales */
+  margin-left: 210px;
+  margin-right: 210px;
+  width: calc(100% - 420px); /* Ancho total menos los márgenes laterales */
+  
+  /* Establecemos position relative para ubicar hijos con absolute internamente */
+  position: relative;
+  
+  /* Altura mínima para visualizar contenido inicial, 
+     crecerá automáticamente si agregas más texto */
+  min-height: 500px; 
+  padding-bottom: 50px; /* Espacio interno inferior */
+}
+
+.container-subtitle {
+  position: absolute;
+  font-size: 40px;
+  color: var(--color-negritas);
+  font-weight: normal;
+  
+  /* Especificaciones de límite */
+  top: 100px; /* Límite superior */
+  left: 85px; /* Límite izquierdo */
+}
+
+.general-text {
+  position: absolute;
+  font-size: 25px;
+  color: var(--color-negritas);
+  
+  /* Especificaciones de límite */
+  top: 110px; /* Límite superior */
+  
+  /* Límite izquierdo: Separación mínima de 170px desde el derecho del subtítulo2.
+     Subtítulo2 empieza en 85px. No sabemos su ancho exacto en px con CSS puro fácilmente.
+     Usaremos una estimación visual basada en Figma o una medida fija razonable.
+     Probemos empezando en el 50% del contenedor o una medida fija grande. */
+  left: 550px; /* Ajuste este valor para igualar visualmente el Figma */
+  
+  /* Límite derecho máximo: Separación mínima de 110px del borde derecho */
+  right: 110px; 
+}
+
+.divider-line {
+  position: absolute;
+  height: 5px; /* Grosor */
+  background-color: var(--color-linea-divisora);
+  
+  /* Especificaciones de límite */
+  /* Límite superior máximo: Separación mínima de 20px bajo el texto general.
+     Como el texto general usa absolute y puede crecer, ubicar la línea 
+     con absolute 'top' es arriesgado. 
+     Para este elemento, es mejor usar flujo normal o un cálculo si conocemos la altura del texto.
+     Por ahora, lo ubicaremos a una altura fija baja para cumplir con el borrador visual. */
+  top: 300px; /* Ajustar según sea necesario basándose en el volumen de texto */
+  
+  /* Límites laterales */
+  left: 50px; /* Separación izquierda */
+  right: 50px; /* Separación derecha */
+}

@@ -1,0 +1,85 @@
+/* src/components/Header.css */
+
+.fixed-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%; /* Todo el ancho disponible */
+  height: 150px;
+  background-color: var(--color-fondo-contraste);
+  box-shadow: var(--sombra-header);
+  z-index: 1000; /* Asegura que esté por encima del cuerpo */
+}
+
+.header-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Flex centrado para ubicar el logo perfectamente en el centro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Estilos Comunes para Sliders --- */
+.slider-visual {
+  height: 55px;
+  width: 90px;
+  border-radius: 27.5px; /* Mitad de la altura para bordes redondeados */
+  padding: 5px; /* Espacio interno para el círculo */
+  display: flex;
+  align-items: center;
+}
+
+.slider-visual.desactivado {
+  background-color: var(--color-desactivado);
+  justify-content: flex-start; /* Círculo a la izquierda */
+}
+
+.slider-circle {
+  height: 45px; /* Un poco más pequeño que el contenedor */
+  width: 45px;
+  background-color: #FFFFFF; /* Círculo blanco */
+  border-radius: 50%;
+}
+
+/* --- Lado Izquierdo: Idiomas --- */
+.language-slider-container {
+  position: absolute;
+  left: 214px; /* Distancia desde el límite izquierdo */
+  display: flex;
+  align-items: center;
+  gap: 26px; /* Separación entre elementos */
+}
+
+.slider-text {
+  font-size: 50px;
+  color: var(--color-negritas);
+}
+
+/* --- Centro: Logotipo --- */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-co {
+  width: 140px;
+  height: 140px;
+  /* El centrado vertical y horizontal lo maneja .header-content */
+}
+
+/* --- Lado Derecho: Tonos --- */
+.theme-slider-container {
+  position: absolute;
+  right: 214px; /* Distancia desde el límite derecho */
+  display: flex;
+  align-items: center;
+  gap: 26px; /* Separación entre elementos */
+}
+
+.theme-icon {
+  width: 70px;
+  height: 70px;
+}

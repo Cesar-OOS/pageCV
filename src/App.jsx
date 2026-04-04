@@ -1,9 +1,12 @@
-import './App.css'
+// src/App.jsx
+import Header from './components/header';
+import MainBody from './components/mainBody';
 
 function App() {
   return (
     <div>
-      <h1>Portafolio Profesional</h1>
+      <Header />
+      <MainBody />
     </div>
   )
 }
